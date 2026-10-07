@@ -32,7 +32,7 @@ person running it does not own or have explicit written permission to test.
 2. FOLDER STRUCTURE
 --------------------------------------------------------------------------------
 
-codes/
+src/
     extract_features.py    - Converts a packet capture (.pcap/.pcapng) into a
                               CSV of 38 behavioural features per 5-second
                               window. Used both for offline dataset building
@@ -59,28 +59,19 @@ codes/
                               impersonated identity, with a confidence label.
                               Can also be run standalone for testing.
 
-datasets_and_models/
+dataset/
     dataset.csv               - The final labelled feature dataset (229
                               windows across 14 independent captures:
                               NORMAL, MITM, ARP_DOS, RECON).
+Model/
 
     rf_model_200_corrected.pkl - The final trained Random Forest model
                               (200 trees), saved together with its expected
                               feature-column schema.
 
-training_traffic_captures/
-                              - Raw packet captures (.pcapng) used to build
-                              the dataset above, organised by class
-                              (e.g. normal*.pcapng, mitmnew*.pcapng,
-                              ban*.pcapng, recon*.pcapng).
 
-ids_logs/
-    ids_events.csv            - Full log of every classification decision
-                              made during live testing sessions.
-
-    ids_alerts.csv            - Subset of the above containing only
-                              CONFIRMED security alerts, with identification
-                              results (attacker IP/MAC, victim IP) attached.
+DOC/
+ Screenshots of the result
 
 
 --------------------------------------------------------------------------------
